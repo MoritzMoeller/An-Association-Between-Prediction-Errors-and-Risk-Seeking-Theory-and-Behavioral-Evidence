@@ -49,6 +49,7 @@ for i = subs
 end
 
 disp('saving file')
-save(['fits/fit_', model,'.mat'],'posteriors','outs')
+mkdir(['fits/',dataset])
+save(['fits/',dataset,'/fit_', model,'.mat'],'posteriors','outs')
 
 end

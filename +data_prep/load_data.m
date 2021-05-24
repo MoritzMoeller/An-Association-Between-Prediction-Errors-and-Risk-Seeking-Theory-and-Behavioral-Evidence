@@ -39,6 +39,11 @@ switch experiment
         D = load('data/data_table_grohn.mat');
         dt = data_prep.ready_dt_grohn(D.data_table_image, 0);
         
+    case {'test'}
+        D = load('data/data_table_grohn.mat');
+        dt = data_prep.ready_dt_grohn(D.data_table_image, 0);
+        dt = dt(dt.ID == 1 & dt.block == 1, :);
+        
     case {'grohn_alt_pub'}
         D = load('../Reward-prediction-errors-induce-risk-seeking/data_table_alt_pub.mat');
         dt = ready_dt_grohn(D.data_table, 0);
