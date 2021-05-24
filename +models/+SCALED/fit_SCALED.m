@@ -1,4 +1,4 @@
-function [posterior, out] = fit_PEIRS(ID, dt, DISP, Q0)
+function [posterior, out] = fit_SCALED(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -59,10 +59,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-phi(2).name = '\gamma';
-phi(2).trafo = @(x) x;
-
-save('models/PEIRS/param_info_PEIRS.mat', 'theta', 'phi')
+save('+models/+SCALED/param_info_SCALED.mat', 'theta', 'phi')
 
 %% set options
 
@@ -70,7 +67,7 @@ save('models/PEIRS/param_info_PEIRS.mat', 'theta', 'phi')
 dim = struct( ...
     'n',        8, ... number of hidden states (1-4: values)
     'n_theta',  3, ... number of evolution parameters (1: learning rate)
-    'n_phi',    2 ... number of observation parameters (1: softmax temperature)
+    'n_phi',    1 ... number of observation parameters (1: softmax temperature)
     );
 
 options = [];
@@ -92,10 +89,8 @@ options.priors.SigmaX0 = 0.000001 * eye(8);
 options.priors.muTheta = [-1; -1; 2];
 options.priors.SigmaTheta = 2 * eye(3);
 
-options.priors.muPhi = [-2; 0];
-options.priors.SigmaPhi = 2 * eye(2);
-options.priors.SigmaPhi(2,2) = 20;
-
+options.priors.muPhi = -2;
+options.priors.SigmaPhi = 2;
 
 options.priors.a_sigma(1) = 1;
 options.priors.b_sigma(1) = 1;
@@ -112,6 +107,6 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_PEIRS, @g_PEIRS, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_SCALED, @g_SCALED, dim, options);
 
 end

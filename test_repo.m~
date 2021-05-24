@@ -7,10 +7,12 @@ function test_repo()
 try
     fit_functions.fit_model_v2('grohn', 'RW')
 catch
-    helper_functions.cprintf('red', '!!!! fitting broken !!!!\n')
+    helper_functions.cprintf('green', ''!!!! Fitting broken !!!!'\n')
+
+    disp('!!!! Fitting broken !!!!')
     return
 end
-helper_functions.cprintf('green', '---- fitting: OK\n')
+disp('Fitting: OK')
 
 
 %% if all goes well

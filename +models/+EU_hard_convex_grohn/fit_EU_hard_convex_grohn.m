@@ -1,4 +1,4 @@
-function [posterior, out] = fit_EU_hard_concave_grohn(ID, dt, DISP, Q0)
+function [posterior, out] = fit_EU_hard_convex_grohn(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -57,7 +57,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('models/EU_hard_concave_grohn/param_info_EU_hard_concave_grohn.mat', 'theta', 'phi')
+save('+models/+EU_hard_convex_grohn/param_info_EU_hard_convex_grohn.mat', 'theta', 'phi')
 
 %% set options
 
@@ -108,7 +108,7 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_EU_hard_concave_grohn, @g_EU_hard_concave_grohn, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_EU_hard_convex_grohn, @g_EU_hard_convex_grohn, dim, options);
 
 end
 

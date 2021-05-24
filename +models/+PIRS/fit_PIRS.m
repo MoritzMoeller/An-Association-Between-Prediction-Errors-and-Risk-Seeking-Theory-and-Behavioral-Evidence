@@ -1,4 +1,4 @@
-function [posterior, out] = fit_PU_inv_hard_grohn(ID, dt, DISP, Q0)
+function [posterior, out] = fit_PIRS(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -13,8 +13,6 @@ function [posterior, out] = fit_PU_inv_hard_grohn(ID, dt, DISP, Q0)
 % OUT:
 %  - output of VBA_NLStateSpaceModel, simply forwarded
 %
-
-%% specify and reformat data for VBA
 
 % find relevant data
 dt = dt(dt.ID == ID,:);
@@ -47,26 +45,32 @@ skip_flag = dt.new_block';
 
 theta = struct();
 
-theta(1).name = '\alpha';
+theta(1).name = '\alpha_Q';
 theta(1).trafo = @(x) VBA_sigmoid(x);
 
-theta(2).name = 'k';
-theta(2).trafo = @(x) exp(x);
+theta(2).name = '\alpha_S';
+theta(2).trafo = @(x) VBA_sigmoid(x);
+
+theta(3).name = 'S_0';
+theta(3).trafo = @(x) exp(x);
 
 phi = struct();
 
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('models/PU_inv_hard_grohn/param_info_PU_inv_hard_grohn.mat', 'theta', 'phi')
+phi(2).name = '\gamma';
+phi(2).trafo = @(x) x;
+
+save('+models/+PIRS/param_info_PIRS.mat', 'theta', 'phi')
 
 %% set options
 
 % provide dimensions
 dim = struct( ...
-    'n',        4, ... number of hidden states (1-4: values)
-    'n_theta',  2, ... number of evolution parameters (1: learning rate, 2: compression factor)
-    'n_phi',    1 ... number of observation parameters (1: softmax temperature)
+    'n',        8, ... number of hidden states (1-4: values)
+    'n_theta',  3, ... number of evolution parameters (1: learning rate)
+    'n_phi',    2 ... number of observation parameters (1: softmax temperature)
     );
 
 options = [];
@@ -81,19 +85,18 @@ options.sources(1).out = 1;
 options.sources(1).type = 1;
 
 % set priors for internal states
-options.priors.muX0 = Q0 * ones(4,1);
-options.priors.SigmaX0 = 0.000001 * eye(4);
+options.priors.muX0 = [Q0 * ones(4,1); zeros(4,1)];
+options.priors.SigmaX0 = 0.000001 * eye(8);
 
 % priors for evolution params
-options.priors.muTheta = [-1; -3];
-options.priors.SigmaTheta = eye(2) * 2;
-options.priors.SigmaTheta(2,2) = 4;
+options.priors.muTheta = [-1; -1; 2];
+options.priors.SigmaTheta = 2 * eye(3);
 
-% priors for observation params
-options.priors.muPhi = -2;
-options.priors.SigmaPhi = 2;
+options.priors.muPhi = [-2; 0];
+options.priors.SigmaPhi = 2 * eye(2);
+options.priors.SigmaPhi(2,2) = 20;
 
-% hyper hyper
+
 options.priors.a_sigma(1) = 1;
 options.priors.b_sigma(1) = 1;
 
@@ -109,6 +112,6 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_PU_inv_hard_grohn, @g_PU_inv_hard_grohn, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_PIRS, @g_PIRS, dim, options);
 
 end

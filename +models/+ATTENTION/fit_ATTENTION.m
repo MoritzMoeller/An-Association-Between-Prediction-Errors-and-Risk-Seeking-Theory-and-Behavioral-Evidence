@@ -1,4 +1,4 @@
-function [posterior, out] = fit_PN(ID, dt, DISP, Q0)
+function [posterior, out] = fit_ATTENTION(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -47,18 +47,18 @@ skip_flag = dt.new_block';
 
 theta = struct();
 
-theta(1).name = '\alpha_{pos}';
+theta(1).name = '\alpha';
 theta(1).trafo = @(x) VBA_sigmoid(x);
 
-theta(2).name = '\alpha_{neg}';
-theta(2).trafo = @(x) VBA_sigmoid(x);
+theta(2).name = 'k';
+theta(2).trafo = @(x) x;
 
 phi = struct();
 
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('models/PN/param_info_PN.mat', 'theta', 'phi')
+save('+models/+ATTENTION/param_info_ATTENTION.mat', 'theta', 'phi')
 
 %% set options
 
@@ -85,7 +85,7 @@ options.priors.muX0 = Q0 * ones(4,1);
 options.priors.SigmaX0 = 0.000001 * eye(4);
 
 % priors for observation params
-options.priors.muTheta = [-1, -1]';
+options.priors.muTheta = [-1, 0]';
 options.priors.SigmaTheta = eye(2) * 2;
 
 options.priors.muPhi = -2;
@@ -106,6 +106,6 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_PN, @g_PN, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_ATTENTION, @g_ATTENTION, dim, options);
 
 end

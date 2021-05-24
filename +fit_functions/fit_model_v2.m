@@ -14,7 +14,7 @@ end
 dt = data_prep.load_data(dataset);
 
 % get fit script
-fit_VBA_model = str2func(['models.fit_',model]);
+fit_VBA_model = str2func(['models.',model,'.fit_',model]);
 
 % set up structures for fit outcomes
 posteriors = {};
@@ -49,7 +49,6 @@ for i = subs
 end
 
 disp('saving file')
-mkdir(['data/', dataset,'/fits'])
-save(['data/', dataset,'/fits/fit_', model,'.mat'],'posteriors','outs')
+save(['fits/fit_', model,'.mat'],'posteriors','outs')
 
 end

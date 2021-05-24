@@ -1,4 +1,4 @@
-function [posterior, out] = fit_RW(ID, dt, DISP, Q0)
+function [posterior, out] = fit_PN(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -46,21 +46,26 @@ skip_flag = dt.new_block';
 %% save parameter names and trafos
 
 theta = struct();
-theta(1).name = '\alpha';
+
+theta(1).name = '\alpha_{pos}';
 theta(1).trafo = @(x) VBA_sigmoid(x);
 
+theta(2).name = '\alpha_{neg}';
+theta(2).trafo = @(x) VBA_sigmoid(x);
+
 phi = struct();
+
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('models/RW/param_info_RW.mat', 'theta', 'phi')
+save('+models/+PN/param_info_PN.mat', 'theta', 'phi')
 
 %% set options
 
 % provide dimensions
 dim = struct( ...
     'n',        4, ... number of hidden states (1-4: values)
-    'n_theta',  1, ... number of evolution parameters (1: learning rate)
+    'n_theta',  2, ... number of evolution parameters (1: learning rate)
     'n_phi',    1 ... number of observation parameters (1: softmax temperature)
     );
 
@@ -80,8 +85,8 @@ options.priors.muX0 = Q0 * ones(4,1);
 options.priors.SigmaX0 = 0.000001 * eye(4);
 
 % priors for observation params
-options.priors.muTheta = -1;
-options.priors.SigmaTheta = 2;
+options.priors.muTheta = [-1, -1]';
+options.priors.SigmaTheta = eye(2) * 2;
 
 options.priors.muPhi = -2;
 options.priors.SigmaPhi = 2;
@@ -101,8 +106,6 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_RW, @g_RW, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_PN, @g_PN, dim, options);
 
 end
-
-
