@@ -15,13 +15,8 @@ MODELS_COMP = helper_functions.get_all_models();
 
 %% SIM bar chart
 
-diffs = struct();
-diffs.sim_diffs = helper_functions.compute_sim_risk_diffs(MODELS_SIM, EXPERIMENT);
-diffs.exp_diffs = helper_functions.compute_exp_risk_diffs(EXPERIMENT);
-
 figure
-% plot_sim_and_exp_risk_diffs(diffs, MODELS_DIFF, LABELS_DIFF)
-plot_functions.plot_sim_and_exp_risk_diffs_test_against_exp(diffs, MODELS_SIM)
+plot_functions.plot_sim_and_exp_risk_diffs_test_against_exp(EXPERIMENT, MODELS_SIM)
 
 set(gcf, 'Position', [199 181 333 477])
 if SAVE

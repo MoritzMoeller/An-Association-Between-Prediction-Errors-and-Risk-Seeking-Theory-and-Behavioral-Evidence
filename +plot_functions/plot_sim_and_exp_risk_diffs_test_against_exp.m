@@ -1,12 +1,16 @@
-function plot_sim_and_exp_risk_diffs_test_against_exp(diffs, models)
+function plot_sim_and_exp_risk_diffs_test_against_exp(EXPERIMENT, MODELS)
+
+diffs = struct();
+diffs.sim_diffs = helper_functions.compute_sim_risk_diffs(MODELS, EXPERIMENT);
+diffs.exp_diffs = helper_functions.compute_exp_risk_diffs(EXPERIMENT);
 
 cm = brewermap(10, 'Blues');
 BLUE = cm(5, :);
 GREY = [1,1,1]*0.8;
 
-N = length(models);
+N = length(MODELS);
 
-labels = labels_from_models(models);
+labels = labels_from_models(MODELS);
 
 % get data from experiment
 x_exp = N+1;
@@ -41,7 +45,7 @@ end
 
 [y_sim_ranked, idx] = sort(y_sim);
 e_sim_ranked = e_sim(idx);
-models_ranked = models(idx);
+models_ranked = MODELS(idx);
 ps_ranked = ps(idx);
 
 
@@ -75,7 +79,7 @@ end
 labels = labels_from_models(models_ranked);
 labels{end+1} = "Experiment";
 
-xticks(1:(length(models)+1))
+xticks(1:(length(MODELS)+1))
 xticklabels(labels)
 xtickangle(45)
 

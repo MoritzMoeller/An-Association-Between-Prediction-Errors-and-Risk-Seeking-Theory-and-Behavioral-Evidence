@@ -11,10 +11,10 @@ switch dataset
 end
 
 % load data
-dt = load_data(dataset);
+dt = data_prep.load_data(dataset);
 
 % get fit script
-fit_VBA_model = str2func(['fit_',model]);
+fit_VBA_model = str2func(['models.fit_',model]);
 
 % set up structures for fit outcomes
 posteriors = {};
