@@ -1,3 +1,4 @@
+function fig_3_modelling()
 
 SAVE = 1;
 EXPERIMENT = 'grohn';
@@ -67,4 +68,5 @@ set(gcf, "Position", [560 392 408 556])
 if SAVE
     set(gcf, 'Color', 'none');
     export_fig 'figures/fig_3_modelling/direct_comp.png' -m4
+end
 end

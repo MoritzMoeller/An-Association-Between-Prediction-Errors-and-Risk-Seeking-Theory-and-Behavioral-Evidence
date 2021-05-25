@@ -15,7 +15,7 @@ stats = nan(n_subs, n_mods);
 for i_mod = 1:n_mods
     
     model = models{i_mod};
-    D_fit = open("fits/fit_"+model+".mat");
+    D_fit = open("fits/"+data_set+"/fit_"+model+".mat");
     
     for i_sub = 1:n_subs
         
