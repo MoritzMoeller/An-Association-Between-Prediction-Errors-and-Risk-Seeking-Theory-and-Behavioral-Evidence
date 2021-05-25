@@ -8,14 +8,4 @@ Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). 
 
 ### Reproduce the figures
 
-Scripts that produce the figures are in `figure_scripts'. Run one to produce the figure and save it as a .png into the `figures' folder.
-
-### Get the data
-
-If you want to run your own analyses, and just need the data, run
-
-```
-dt = data_prep.load_data('grohn');
-```
-
-This will give you a table with all relevant data in it.
+Scripts that produce the figures are in figure_scripts. Just run any 
