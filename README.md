@@ -8,7 +8,7 @@ Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). 
 
 ### Reproduce the figures
 
-Scripts that produce the figures are in `figure_scripts'. Run one to produce the figure and save it as a .png into the `figures' folder.
+Scripts that produce the figures are in `figure_scripts`. Run one to produce the figure and save it as a .png into the `figures` folder.
 
 ### Get the data
 
