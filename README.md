@@ -8,7 +8,14 @@ Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). 
 
 ### Reproduce the figures
 
-Scripts that produce the figures are in `figure_scripts`. Run one to produce the figure and save it as a .png into the `figures` folder.
+Scripts that produce the figures are in `figure_scripts`. 
+
+Produce the component parts of all figures by running 
+
+```main_figures```.
+
+Produce the component parts of a single figure by running the corresponding function in `figure_scripts`. Runnning these script will plot the component parts and save PNGs of them in the `figures` folder.
+
 
 ### Get the data
 
