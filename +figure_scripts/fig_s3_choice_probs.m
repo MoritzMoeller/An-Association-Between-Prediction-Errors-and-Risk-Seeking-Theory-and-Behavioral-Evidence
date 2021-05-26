@@ -1,6 +1,5 @@
 function fig_s3_choice_probs()
 
-
 dt = data_prep.load_data('grohn');
 
 cm = brewermap(10, 'Blues');

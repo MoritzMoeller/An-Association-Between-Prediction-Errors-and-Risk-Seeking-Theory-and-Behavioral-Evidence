@@ -1,7 +1,7 @@
 function fig_s1_pupils()
 
 dt = data_prep.load_data('grohn');
-dt = data_prep.add_latent_v3(dt, 'grohn', 'PEIRS');
+dt = data_prep.add_latent(dt, 'grohn', 'PEIRS');
 
 %% Hierachical fits
 

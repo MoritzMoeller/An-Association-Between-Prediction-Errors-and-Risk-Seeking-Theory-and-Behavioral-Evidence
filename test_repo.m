@@ -5,7 +5,7 @@ function test_repo()
 %% fitting
 
 try
-    fit_functions.fit_model_v2('test', 'RW')
+    fit_functions.fit_model('test', 'RW')
 catch
     helper_functions.cprintf('red', '!!!! fitting broken !!!!\n')
     return

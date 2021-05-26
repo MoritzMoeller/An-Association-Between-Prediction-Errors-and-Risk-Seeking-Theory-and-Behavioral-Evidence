@@ -24,5 +24,4 @@ end
 [~,p,~,STATS] = ttest(p_subs - 0.5);
 fprintf('t-test on H_0: p(highChosen) = 0.5, H_1: %s /= 0.5. tstat: %G, p: %G\n',...
     panel, STATS.tstat, p)
-%text(1, 0.6, p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
 end

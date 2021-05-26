@@ -71,17 +71,6 @@ for t = 1:nt
     y(t, 1) = BETA(index_PE_s);
     e(t, 1) = BETASTATS.SE(index_PE_s);
     tstat(t, 1) = BETASTATS.tStat(index_PE_s);
-    
-%     for i = 1:n_subs
-%         
-%         index_B = 2*i;
-%         if strcmp(BNAMES.Name{index_B}, 'PEIRS_abs_PE_s')
-%             beta(subjects(i),t) = beta(subjects(i),t) + B(index_B);
-%         else
-%             disp('Looking at the wrong regressor!')
-%             return
-%         end
-%         
-%     end
+
 end
 end

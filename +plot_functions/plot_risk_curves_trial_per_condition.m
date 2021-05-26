@@ -25,7 +25,6 @@ if not(isempty(model))
 
 end
 
-% lineplot(dt, 'trial_cont_binned', 'risky', 'win')
 plot_functions.lineplot_error_across_pop(dt(dt.win == win_code,:), 'trial_cont_binned', 'risky', [], color)
 
 h = plot(XLIM, 0.5 * [1,1], 'k');

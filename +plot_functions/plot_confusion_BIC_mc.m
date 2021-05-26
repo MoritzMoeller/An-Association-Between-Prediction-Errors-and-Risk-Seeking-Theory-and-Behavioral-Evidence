@@ -11,7 +11,6 @@ BIC_ranks = nan(n_mods, n_mods);
 for i = 1:n_mods
     
     data_set = ['simulated_', models{i}, '_fitted_posterior_mc'];
-    % BICs = nan(n_subs, n_mods);
     
     for j = 1:n_mods
         

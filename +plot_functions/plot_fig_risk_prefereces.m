@@ -4,7 +4,7 @@ LABELS = helper_functions.labels_from_models(MODELS);
 
 figure
 dt = data_prep.load_data('grohn');
-bin_width = 25; % 10 looks decent;
+bin_width = 25;
 
 cm = brewermap(10, 'Blues');
 c1 = cm(3, :);

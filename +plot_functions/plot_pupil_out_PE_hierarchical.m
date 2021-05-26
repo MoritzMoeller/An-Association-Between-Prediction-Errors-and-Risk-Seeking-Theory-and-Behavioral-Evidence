@@ -14,8 +14,6 @@ color = cm(5, :);
 [~, ~, y, e] = helper_functions.compute_regression_traces_out_PE_hierarchical(...
     data_table, t_start, t_stop, nt, subjects);
 
-%%
-
 figure
 plot_functions.plot_regression_traces_bin_hierarchical(...
     y, e, INTERP, nt, 'Outcome prediction error', 'Reward presentation', color)

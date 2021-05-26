@@ -8,14 +8,19 @@ Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). 
 
 ### Reproduce the figures
 
-Scripts that produce the figures are in `figure_scripts`. 
+Scripts that produce the figures are in `figure_scripts`. They will plot the component parts and save PNGs of them in the `figures` folder.
 
 Produce the component parts of all figures by running 
 
-```main_figures```.
+```
+main_figures
+```
 
-Produce the component parts of a single figure by running the corresponding function in `figure_scripts`. Runnning these script will plot the component parts and save PNGs of them in the `figures` folder.
+Produce the component parts of a single figure by running the corresponding function from `+figure_scripts`, for example
 
+```
+figure_scripts.fig_2_behaviour()
+```
 
 ### Get the data
 
@@ -25,7 +30,7 @@ If you want to run your own analyses, and just need the data, run
 dt = data_prep.load_data('grohn');
 ```
 
-This will give you a table with all relevant data in it.
+This will give you a table `dt` with all relevant data in it.
 
 
 ### TODO

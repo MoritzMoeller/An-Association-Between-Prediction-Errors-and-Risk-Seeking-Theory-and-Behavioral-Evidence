@@ -6,8 +6,6 @@ TICKS = 0:1000:2000;
 
 %% stats
 
-% [clusters, p_values, ~, ~] = permutest(y, zeros(size(y)));
-
 bin_stats = struct();
 
 n_y = length(y);

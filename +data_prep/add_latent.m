@@ -1,4 +1,4 @@
-function dt = add_latent_v3(dt, dataset, model)
+function dt = add_latent(dt, dataset, model)
 
 D = open(['fits/', dataset,'/fit_', model,'.mat']);
 
@@ -34,9 +34,7 @@ for i = subs
     
     dt.(key)(ndx,:) = D.outs{i}.gx(1,:)';
     dt.([model,'_latent'])(ndx,:) = D.posteriors{i}.muX';
-    
-    %dt.([model,'_gamma'])(ndx) = D.posteriors{i}.muPhi(2);
-    
+        
     for b = blocks
         
         ndx = dt.ID == i & not(isnan(dt.stim1) & isnan(dt.stim2)) & dt.block == b;
@@ -139,7 +137,6 @@ for i = subs
             
         end
     end
-    
     
     key_correct = [model,'_p_correct'];
     key_risky = [model,'_p_risky'];

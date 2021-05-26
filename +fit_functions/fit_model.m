@@ -1,4 +1,4 @@
-function fit_model_v2(dataset, model)
+function fit_model(dataset, model)
 
 % set initial value
 switch dataset
@@ -33,7 +33,6 @@ for i = subs
     catch exception
         disp(['model ', model, ' makes trouble!'])
     end
-    
     
     % store that fit
     posteriors{i}.muX0 = p.muX0;

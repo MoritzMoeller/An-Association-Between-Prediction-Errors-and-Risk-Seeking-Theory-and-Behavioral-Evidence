@@ -152,35 +152,4 @@ if PLOT
     
 end
 
-% %% Identify stimuli in ClickStim
-% 
-% % 1: save high
-% % 2: risky high
-% % 3: save low
-% % 4: risky low
-% 
-% figure
-% hold on
-% lineplot(dt, 'ClickStim', 'RewardAmount', '')
-% scatter(dt.ClickStim, dt.RewardAmount, 'filled')
-% 
-% %% Identify the stimuli in StimType
-% 
-% % 1: 1
-% % 2: 2
-% % 4: 3
-% % 5: 4
-% 
-% figure
-% 
-% for i = 1:4
-%     
-%     subplot(2,2,i)
-%     hold on
-%     ndx = dt.ClickStim == i;
-%     %lineplot(dt, 'stim1', 'ClickSTim', '')
-%     scatter(dt.stim1(ndx), dt.stim2(ndx), 'filled')
-%     title(sprintf('Click Stim %G', i))
-% end
-
 end

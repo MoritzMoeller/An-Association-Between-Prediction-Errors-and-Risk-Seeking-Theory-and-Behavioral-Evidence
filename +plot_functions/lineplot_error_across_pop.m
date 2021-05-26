@@ -67,7 +67,6 @@ else
         ep = nanstd(y_all, [], 2)/sqrt(length(unique(dt.ID)'));
         try
             ndx = not(xp == 0 & yp == 0);
-            % shadedErrorBar(xp(ndx),yp(ndx),ep(ndx));
             X = sortrows([xp(ndx), yp(ndx), ep(ndx)]);
             errorbar(X(:,1), X(:,2), X(:,3), 'LineWidth', 2, 'MarkerSize', 50, 'CapSize',0, 'Color', color)
             h = scatter(X(:,1), X(:,2), 30, color, 'filled');

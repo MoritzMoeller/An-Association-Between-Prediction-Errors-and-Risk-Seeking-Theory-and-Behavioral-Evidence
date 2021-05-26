@@ -73,9 +73,6 @@ for i = 1:n
     end
 end
 
-%plot([0,length(models)+1], mean_diff_exp * [1, 1], "LineWidth", 1, "Color", 'k')
-%text(0.5, mean_diff_exp + 0.006, "Experiment", 'FontName', 'Arial', 'FontSize', 15)
-
 labels = labels_from_models(models_ranked);
 labels{end+1} = "Experiment";
 

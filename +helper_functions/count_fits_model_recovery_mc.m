@@ -5,7 +5,6 @@ n_mods = length(models);
 for i = 1:n_mods
     
     data_set = ['simulated_', models{i}, '_fitted_posterior_mc'];
-    % BICs = nan(n_subs, n_mods);
     
     for j = 1:n_mods
         

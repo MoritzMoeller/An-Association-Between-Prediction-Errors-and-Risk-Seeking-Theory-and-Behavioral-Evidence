@@ -64,7 +64,6 @@ if STATS
     
     opt = statset('LinearMixedModel');
     opt.UseParallel = true;
-    %compare(mdl_0, mdl_1,'NSim',1000, 'Options',opt)
     compare(mdl_0, mdl_1,'NSim',10, 'Options',opt)
 end
 %%
