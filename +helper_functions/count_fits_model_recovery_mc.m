@@ -9,7 +9,7 @@ for i = 1:n_mods
     
     for j = 1:n_mods
         
-        all_fits = dir("data/recovery_posterior_mc/" + data_set+"/fit_" + models{j} + "_*.mat");
+        all_fits = dir("recovery_posterior_mc/" + data_set+"/fit_" + models{j} + "_*.mat");
         n_fits = length(all_fits);
         
         disp(sprintf("Have %G fits for model " + models{j} + " to dataset " + data_set, n_fits))

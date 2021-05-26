@@ -27,5 +27,5 @@ This will give you a table with all relevant data in it.
 * Change names like 'grohn' datasets
 * Remove comments
 * Clean up get_model_names. Maybe loose it, if models are named well from outset.
-
+* put all data in a data folder
 
