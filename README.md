@@ -19,3 +19,13 @@ dt = data_prep.load_data('grohn');
 ```
 
 This will give you a table with all relevant data in it.
+
+
+### TODO
+
+* Rename models like in manuscript
+* Change names like 'grohn' datasets
+* Remove comments
+* Clean up get_model_names. Maybe loose it, if models are named well from outset.
+
+

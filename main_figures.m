@@ -8,7 +8,14 @@ figure_scripts.fig_2_behaviour()
 
 figure_scripts.fig_3_modelling()
 
-%% Fig S1
+%% Fig S2
 
 figure_scripts.fig_s2_performance()
 
+%% Fig S3
+
+figure_scripts.fig_s3_choice_probs()
+
+%% Fig S4
+
+figure_scripts.fig_s4_risk_likelihoods()

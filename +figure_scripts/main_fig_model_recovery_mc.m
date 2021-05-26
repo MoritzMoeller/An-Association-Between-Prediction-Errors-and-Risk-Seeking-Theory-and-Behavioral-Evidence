@@ -2,7 +2,7 @@
 
 MODELS = get_all_models();
 
-count_fits_model_recovery_mc(MODELS);
+helper_functions.count_fits_model_recovery_mc(MODELS);
 
 %% plot
 

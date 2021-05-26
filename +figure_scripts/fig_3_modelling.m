@@ -27,7 +27,8 @@ end
 
 %% SIM 2d contour
 
-lls = plot_functions.plot_simulated_risk_preferences_contour(MODELS_SIM, EXPERIMENT);
+PLOT = 1;
+plot_functions.plot_simulated_risk_preferences_contour(MODELS_SIM, EXPERIMENT, PLOT);
 set(gcf, "Position", [71 757 777 191])
 if SAVE
     set(gcf, 'Color', 'none');
