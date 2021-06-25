@@ -62,6 +62,7 @@ xlim([0,n_mods+1])
 
 ylabel("Sum BIC")
 
+box off
 set(gca, 'FontSize', 15, 'FontName', 'Arial')
     
 end

@@ -77,7 +77,7 @@ xticklabels(tick_labels)
 yticks(0)
 yticklabels(0)
 
-xlabel('time (ms)')
+xlabel('Time [ms]')
 ylabel({'Pupil response to \delta (a.u.)'})
 
 title(fig_name)

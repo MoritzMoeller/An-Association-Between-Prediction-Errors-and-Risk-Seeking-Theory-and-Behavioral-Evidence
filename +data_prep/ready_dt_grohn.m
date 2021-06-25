@@ -135,17 +135,17 @@ if PLOT
     bar(1:3, performance(1:3), "FaceColor", GREY)
     bar(4:length(performance), performance(4:end), "FaceColor", c)
     
-    grid on
+    grid off
     ylim([0,1])
     
     yticks([0, 0.5 tresh, 1])
-    yticklabels({'0','chance level: 50', sprintf('treshold: %G', tresh*100), '100'})
+    yticklabels({'0','chance level: 50', sprintf('threshold: %G', tresh*100), '100'})
     
     xticks(1:30)
     xticklabels({})
     
     xlabel('Participants')
-    ylabel('% correct')
+    ylabel('Proportion of correct choices')
     
     set(gca, 'FontSize', 15, 'FontName', 'Arial')
     set(gcf, 'Position', [526 367 588 391])

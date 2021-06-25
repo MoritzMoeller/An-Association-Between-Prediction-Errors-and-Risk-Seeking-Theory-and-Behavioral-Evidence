@@ -82,7 +82,7 @@ xtickangle(45)
 
 ylabel("P(risky|high) - P(risky|low)")
 
-ylim([-0.05, 0.32])
+ylim([-0.05, 0.35])
 
 set(gca, "FontName", "Arial", "FontSize", 15)
 end
