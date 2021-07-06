@@ -27,16 +27,8 @@ end
 
 
 switch experiment
-    case {1, 'madan1'}
-        D = load('PBR 2014 Memory/dt_exp1.mat');
-        dt = ready_dt_madan(D.dt_exp1, 0);
-        
-    case {2, 'madan2'}
-        D = load('PBR 2014 Memory/dt_exp2.mat');
-        dt = ready_dt_madan(D.PBR2014Exp2, 0);
-        
     case {3, 'grohn'}
-        D = load('data/data_table_grohn.mat');
+        D = load('data/experiment/data_table_grohn.mat');
         dt = data_prep.ready_dt_grohn(D.data_table_image, 0);
         
     case {'test'}
@@ -61,7 +53,7 @@ switch experiment
         dt = ready_sim_v2(D.dt);
         
     case {'simulated'}
-        D = load(['data_tables/simulated_', i3, '.mat']);
+        D = load(['data/simulation/simulated_', i3, '.mat']);
         dt = ready_sim_v2(D.dt);
         
     otherwise

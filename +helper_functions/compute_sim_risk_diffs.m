@@ -7,7 +7,7 @@ all_diffs = {};
 for i = 1:m
     
     model = models{i};
-    D = load(['risk_prefs/risk_prefs_sim_',model,'_exp_',experiment,'.mat']);
+    D = load(['data/risk_prefs/risk_prefs_sim_',model,'_exp_',experiment,'.mat']);
     all_risk_prefs = D.sim_risk_preferences;
     
     n = length(all_risk_prefs);

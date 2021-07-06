@@ -11,7 +11,7 @@ end
 
 for im = 1:length(models)
     
-    D = load(['risk_prefs/risk_prefs_sim_',models{im},'_exp_',experiment,'.mat']);
+    D = load(['data/risk_prefs/risk_prefs_sim_',models{im},'_exp_',experiment,'.mat']);
     sim_risk_prefs = D.sim_risk_preferences;
     
     model_risk_prefs = [];

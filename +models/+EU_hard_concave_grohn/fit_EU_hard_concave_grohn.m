@@ -108,7 +108,10 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_EU_hard_concave_grohn, @g_EU_hard_concave_grohn, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u,...
+    @models.EU_hard_concave_grohn.f_EU_hard_concave_grohn, ...
+    @models.EU_hard_concave_grohn.g_EU_hard_concave_grohn, ...
+    dim, options);
 
 end
 

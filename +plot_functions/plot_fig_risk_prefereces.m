@@ -16,7 +16,7 @@ GREY2 = [1,1,1]*0.2;
 
 for m = 1:length(MODELS)
     
-    D = load(['risk_prefs_per_trial/risk_prefs_per_trial_sim_',MODELS{m},'_exp_grohn.mat']);
+    D = load(['data/risk_prefs_per_trial/risk_prefs_per_trial_sim_',MODELS{m},'_exp_grohn.mat']);
     sim_risk_preferences_per_trial = D.sim_risk_preferences_per_trial;
     
     subplot(1,length(MODELS),m)

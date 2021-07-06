@@ -107,6 +107,9 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, @f_SCALED, @g_SCALED, dim, options);
+[posterior, out] = VBA_NLStateSpaceModel(y, u, ...
+    @models.SCALED.f_SCALED, ...
+    @models.SCALED.g_SCALED, ...
+    dim, options);
 
 end

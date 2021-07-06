@@ -1,6 +1,6 @@
 function dt = add_latent(dt, dataset, model)
 
-D = open(['fits/', dataset,'/fit_', model,'.mat']);
+D = open(['data/fits/', dataset,'/fit_', model,'.mat']);
 
 subs = unique(dt.ID)';
 blocks = unique(dt.block)';

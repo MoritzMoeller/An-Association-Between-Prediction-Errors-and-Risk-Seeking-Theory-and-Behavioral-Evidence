@@ -7,7 +7,7 @@ color_scatter = 'k';
 figure
 hold on
 
-D = load(['risk_prefs/risk_prefs_sim_',models{1},'_exp_',experiment,'.mat']);
+D = load(['data/risk_prefs/risk_prefs_sim_',models{1},'_exp_',experiment,'.mat']);
 sim_risk_prefs = D.sim_risk_preferences;
 
 model_risk_prefs = [];

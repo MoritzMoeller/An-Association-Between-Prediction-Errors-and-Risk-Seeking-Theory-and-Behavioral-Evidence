@@ -14,7 +14,7 @@ for i = 1:n_mods
     
     for j = 1:n_mods
         
-        all_fits = dir("recovery_posterior_mc/" + data_set+"/fit_" + models{j} + "_*.mat");
+        all_fits = dir("data/recovery_posterior_mc/" + data_set+"/fit_" + models{j} + "_*.mat");
         n_fits = length(all_fits);
         n_fits_max = 100;
         
@@ -27,7 +27,7 @@ for i = 1:n_mods
         
         for k = 1:n_fits_max
             
-            D_fit = open("recovery_posterior_mc/"+data_set+"/"+all_fits(k).name);
+            D_fit = open("data/recovery_posterior_mc/"+data_set+"/"+all_fits(k).name);
             
             for i_sub = 1:n_subs
                 
