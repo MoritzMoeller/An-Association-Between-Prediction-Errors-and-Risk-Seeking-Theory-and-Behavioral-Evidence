@@ -1,6 +1,6 @@
 function fig_s3_choice_probs()
 
-dt = data_prep.load_data('grohn');
+dt = data_prep.load_data('plosCB2021');
 
 cm = brewermap(10, 'Blues');
 BLUE = cm(5, :);

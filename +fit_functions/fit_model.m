@@ -2,10 +2,8 @@ function fit_model(dataset, model)
 
 % set initial value
 switch dataset
-    case 'grohn'
+    case 'plosCB2021'
         Q0 = 50;
-    case 'madan2'
-        Q0 = 0;
     otherwise
         Q0 = 50;
 end
@@ -48,7 +46,7 @@ for i = subs
 end
 
 disp('saving file')
-mkdir(['fits/',dataset])
-save(['fits/',dataset,'/fit_', model,'.mat'],'posteriors','outs')
+mkdir(['data/fits/',dataset])
+save(['data/fits/',dataset,'/fit_', model,'.mat'],'posteriors','outs')
 
 end
