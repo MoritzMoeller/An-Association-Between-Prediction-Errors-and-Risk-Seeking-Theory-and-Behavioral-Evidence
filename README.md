@@ -2,12 +2,15 @@
 
 Contains all the code needed to reproduce the figures and stats given in [An Association between prediction errors and risk seeking--theory and behavioral evidence](https://www.biorxiv.org/content/10.1101/2020.04.29.067751v2.full).
 
-### Prerequisits
+### Dependencies
 
-* Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). To run the scripts in this repo, you need to download and install it.
-* For plots, we use colors from brewermap (https://github.com/DrosteEffect/BrewerMap). The brewermap function needs to be downloaded and added to the path.
-* To save plots as in png format, we use the export_fig function (https://github.com/altmany/export_fig). Download and add to path.
-* Shaded Error Bar https://github.com/raacampbell/shadedErrorBar
+* Fitting is based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). To run the scripts in this repo, you need to download and install it.
+
+We also use several external functions. All of them need to be downloaded and added to the Matlab path.
+
+* Brewermap (https://github.com/DrosteEffect/BrewerMap)
+* Export_fig (https://github.com/altmany/export_fig)
+* ShadedErrorBar (https://github.com/raacampbell/shadedErrorBar)
 * Shuffle (https://www.mathworks.com/matlabcentral/fileexchange/27076-shuffle)
 
 ### Reproduce the figures
