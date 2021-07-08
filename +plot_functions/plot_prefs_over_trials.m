@@ -21,7 +21,7 @@ ylabel("P(high|different)")
 xlabel("trial number")
 
 p = helper_functions.test_significance_preferences(dt, "P(high)");
-text(60, 0.52, p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
+text(60, 0.52, helper_functions.p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
 
 
 subplot(1,3,2)
@@ -32,7 +32,7 @@ ylabel("P(risky|both-high)")
 xlabel("trial number")
 
 p = helper_functions.test_significance_preferences(dt, "P(risky|both-high)");
-text(60, 0.506, p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
+text(60, 0.506, helper_functions.p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
 
 subplot(1,3,3)
 bin_width = 25; % 10 looks decent;
@@ -42,7 +42,7 @@ ylabel("P(risky|both-low)")
 xlabel("trial number")
 
 p = helper_functions.test_significance_preferences(dt, "P(risky|both-low)");
-text(60, 0.485, p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
+text(60, 0.485, helper_functions.p2star(p), 'FontSize', 30, 'FontName', 'Arial', 'HorizontalAlignment','center')
 
 set(gcf, 'Position', [560 555 602 393])
 

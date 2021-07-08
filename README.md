@@ -4,7 +4,11 @@ Contains all the code needed to reproduce the figures and stats given in [An Ass
 
 ### Prerequisits
 
-Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). To run the scripts in this repo, you need to download and install it.
+* Fitting in based on the [VBA toolbox](https://mbb-team.github.io/VBA-toolbox/). To run the scripts in this repo, you need to download and install it.
+* For plots, we use colors from brewermap (https://github.com/DrosteEffect/BrewerMap). The brewermap function needs to be downloaded and added to the path.
+* To save plots as in png format, we use the export_fig function (https://github.com/altmany/export_fig). Download and add to path.
+* Shaded Error Bar https://github.com/raacampbell/shadedErrorBar
+* Shuffle (https://www.mathworks.com/matlabcentral/fileexchange/27076-shuffle)
 
 ### Reproduce the figures
 
