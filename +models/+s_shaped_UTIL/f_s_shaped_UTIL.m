@@ -1,4 +1,4 @@
-function  fx = f_PU_hard_grohn(x,P,u,~)
+function  fx = f_s_shaped_UTIL(x,P,u,~)
 
 % IN:
 %	- x: action values and learning rate (n x 1)

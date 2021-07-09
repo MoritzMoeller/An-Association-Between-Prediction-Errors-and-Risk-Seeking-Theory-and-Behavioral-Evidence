@@ -1,4 +1,4 @@
-function  fx = f_SCALED(x,P,u,~)
+function  fx = f_scaled_PE(x,P,u,~)
 
 % IN:
 %   - x(1:4): action values

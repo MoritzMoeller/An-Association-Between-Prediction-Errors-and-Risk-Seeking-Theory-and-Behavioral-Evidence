@@ -1,4 +1,4 @@
-function [posterior, out] = fit_SCALED(ID, dt, DISP, Q0)
+function [posterior, out] = fit_scaled_PE(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -59,7 +59,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+SCALED/param_info_SCALED.mat', 'theta', 'phi')
+save('+models/+scaled_PE/param_info_scaled_PE.mat', 'theta', 'phi')
 
 %% set options
 
@@ -108,8 +108,8 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 %% invert model
 
 [posterior, out] = VBA_NLStateSpaceModel(y, u, ...
-    @models.SCALED.f_SCALED, ...
-    @models.SCALED.g_SCALED, ...
+    @models.scaled_PE.f_scaled_PE, ...
+    @models.scaled_PE.g_scaled_PE, ...
     dim, options);
 
 end

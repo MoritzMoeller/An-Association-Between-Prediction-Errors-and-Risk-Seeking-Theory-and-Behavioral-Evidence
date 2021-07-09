@@ -1,4 +1,4 @@
-function  gx = g_PU_inv_hard_grohn(x, P, u, ~)
+function  gx = g_inverse_s_shaped_UTIL(x, P, u, ~)
 
 % IN:
 %   - x(1:4): action values

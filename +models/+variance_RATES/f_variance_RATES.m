@@ -1,4 +1,4 @@
-function  fx = f_VAR(x,P,u,~)
+function  fx = f_variance_RATES(x,P,u,~)
 
 % IN:
 %	- x: action values and learning rate (n x 1)

@@ -1,4 +1,4 @@
-function  fx = f_EU_hard_convex_grohn(x,P,u,~)
+function  fx = f_convex_UTIL(x,P,u,~)
 
 % IN:
 %	- x: action values and learning rate (n x 1)

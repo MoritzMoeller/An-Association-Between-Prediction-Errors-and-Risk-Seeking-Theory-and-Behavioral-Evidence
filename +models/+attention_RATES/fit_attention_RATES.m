@@ -1,4 +1,4 @@
-function [posterior, out] = fit_attention-RATES(ID, dt, DISP, Q0)
+function [posterior, out] = fit_attention_RATES(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -107,8 +107,8 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 %% invert model
 
 [posterior, out] = VBA_NLStateSpaceModel(y, u, ...
-    @models.attention-RATES.f_attention-RATES, ...
-    @models.attention-RATES.g_attention-RATES, ... 
+    @models.attention_RATES.f_attention_RATES, ...
+    @models.attention_RATES.g_attention_RATES, ... 
     dim, options);
 
 end

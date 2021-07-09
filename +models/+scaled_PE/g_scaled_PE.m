@@ -1,4 +1,4 @@
-function  gx = g_PEIRS(x, P, u, ~)
+function  gx = g_scaled_PE(x, P, u, ~)
 
 % IN:
 %   - x(1:4): action values

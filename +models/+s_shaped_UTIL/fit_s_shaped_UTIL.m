@@ -1,4 +1,4 @@
-function [posterior, out] = fit_PU_hard_grohn(ID, dt, DISP, Q0)
+function [posterior, out] = fit_s_shaped_UTIL(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -58,7 +58,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+PU_hard_grohn/param_info_PU_hard_grohn.mat', 'theta', 'phi')
+save('+models/+s_shaped_UTIL/param_info_s_shaped_UTIL.mat', 'theta', 'phi')
 
 %% set options
 
@@ -110,8 +110,8 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 %% invert model
 
 [posterior, out] = VBA_NLStateSpaceModel(y, u, ...
-    @models.PU_hard_grohn.f_PU_hard_grohn, ...
-    @models.PU_hard_grohn.g_PU_hard_grohn, ...
+    @models.s_shaped_UTIL.f_s_shaped_UTIL, ...
+    @models.s_shaped_UTIL.g_s_shaped_UTIL, ...
     dim, options);
 
 end

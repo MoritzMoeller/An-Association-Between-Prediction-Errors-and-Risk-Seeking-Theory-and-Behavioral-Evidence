@@ -1,4 +1,4 @@
-function [posterior, out] = fit_VAR(ID, dt, DISP, Q0)
+function [posterior, out] = fit_variance_RATES(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -58,7 +58,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+VAR/param_info_VAR.mat', 'theta', 'phi')
+save('+models/+variance_RATES/param_info_variance_RATES.mat', 'theta', 'phi')
 
 %% set options
 
@@ -107,8 +107,8 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 %% invert model
 
 [posterior, out] = VBA_NLStateSpaceModel(y, u, ...
-    @models.VAR.f_VAR, ...
-    @models.VAR.g_VAR, ...
+    @models.variance_RATES.f_variance_RATES, ...
+    @models.variance_RATES.g_variance_RATES, ...
     dim, options);
 
 end

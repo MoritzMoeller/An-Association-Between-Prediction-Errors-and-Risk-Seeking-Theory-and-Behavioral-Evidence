@@ -1,4 +1,4 @@
-function [posterior, out] = fit_PN(ID, dt, DISP, Q0)
+function [posterior, out] = fit_pos_neg_RATES(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -58,7 +58,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+PN/param_info_PN.mat', 'theta', 'phi')
+save('+models/+pos_neg_RATES/param_info_pos_neg_RATES.mat', 'theta', 'phi')
 
 %% set options
 
@@ -107,8 +107,8 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 %% invert model
 
 [posterior, out] = VBA_NLStateSpaceModel(y, u, ...
-    @models.PN.f_PN, ...
-    @models.PN.g_PN, ...
+    @models.pos_neg_RATES.f_pos_neg_RATES, ...
+    @models.pos_neg_RATES.g_pos_neg_RATES, ...
     dim, options);
 
 end

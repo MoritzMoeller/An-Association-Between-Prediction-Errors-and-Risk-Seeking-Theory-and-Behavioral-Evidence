@@ -1,4 +1,4 @@
-function  gx = g_PN(x, P, u, ~)
+function  gx = g_pos_neg_RATES(x, P, u, ~)
 
 % IN:
 %   - x(1:4): action values

@@ -1,4 +1,4 @@
-function  gx = g_EU_hard_convex_grohn(x, P, u, ~)
+function  gx = g_convex_UTIL(x, P, u, ~)
 
 % IN:
 %   - x(1:4): action values
