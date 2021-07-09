@@ -1,4 +1,4 @@
-function  fx = f_ATTENTION(x,P,u,~)
+function  fx = f_attention-RATES(x,P,u,~)
 
 % IN:
 %	- x: action values and learning rate (n x 1)

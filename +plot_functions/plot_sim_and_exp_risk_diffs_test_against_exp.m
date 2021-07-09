@@ -10,7 +10,7 @@ GREY = [1,1,1]*0.8;
 
 N = length(MODELS);
 
-labels = labels_from_models(MODELS);
+labels = helper_functions.labels_from_models(MODELS);
 
 % get data from experiment
 x_exp = N+1;

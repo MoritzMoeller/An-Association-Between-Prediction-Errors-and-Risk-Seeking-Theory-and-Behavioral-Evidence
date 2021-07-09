@@ -1,4 +1,4 @@
-function  gx = g_ATTENTION(x, P, u, ~)
+function  gx = g_attention-RATES(x, P, u, ~)
 
 % IN:
 %   - x(1:4): action values

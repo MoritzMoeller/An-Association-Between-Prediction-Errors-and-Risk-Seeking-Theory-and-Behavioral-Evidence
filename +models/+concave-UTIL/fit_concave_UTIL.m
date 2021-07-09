@@ -1,4 +1,4 @@
-function [posterior, out] = fit_ATTENTION(ID, dt, DISP, Q0)
+function [posterior, out] = fit_concave_UTIL(ID, dt, DISP, Q0)
 
 % This function uses VBA to fit a model specified by f and g to one block
 % of data. The block is specified through ID and block number, the data is
@@ -46,26 +46,25 @@ skip_flag = dt.new_block';
 %% save parameter names and trafos
 
 theta = struct();
-
 theta(1).name = '\alpha';
 theta(1).trafo = @(x) VBA_sigmoid(x);
 
 theta(2).name = 'k';
-theta(2).trafo = @(x) x;
+theta(2).trafo = @(x) exp(x);
 
 phi = struct();
 
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+ATTENTION/param_info_ATTENTION.mat', 'theta', 'phi')
+save('+models/+concave-UTIL/param_info_concave-UTIL.mat', 'theta', 'phi')
 
 %% set options
 
 % provide dimensions
 dim = struct( ...
     'n',        4, ... number of hidden states (1-4: values)
-    'n_theta',  2, ... number of evolution parameters (1: learning rate)
+    'n_theta',  2, ... number of evolution parameters (1: learning rate, 2: compression factor)
     'n_phi',    1 ... number of observation parameters (1: softmax temperature)
     );
 
@@ -84,13 +83,16 @@ options.sources(1).type = 1;
 options.priors.muX0 = Q0 * ones(4,1);
 options.priors.SigmaX0 = 0.000001 * eye(4);
 
-% priors for observation params
-options.priors.muTheta = [-1, 0]';
+% priors for evolution params
+options.priors.muTheta = [-1; -3];
 options.priors.SigmaTheta = eye(2) * 2;
+options.priors.SigmaTheta(2,2) = 4;
 
+% priors for observation params
 options.priors.muPhi = -2;
 options.priors.SigmaPhi = 2;
 
+% hyper hyper
 options.priors.a_sigma(1) = 1;
 options.priors.b_sigma(1) = 1;
 
@@ -106,9 +108,12 @@ options.multisession.fixed.phi = 1:dim.n_phi;
 
 %% invert model
 
-[posterior, out] = VBA_NLStateSpaceModel(y, u, ...
-    @models.ATTENTION.f_ATTENTION, ...
-    @models.ATTENTION.g_ATTENTION, ... 
+[posterior, out] = VBA_NLStateSpaceModel(y, u,...
+    @models.concave_UTIL.f_concave_UTIL, ...
+    @models.concave_UTIL.g_concave_UTIL, ...
     dim, options);
 
 end
+
+
+
