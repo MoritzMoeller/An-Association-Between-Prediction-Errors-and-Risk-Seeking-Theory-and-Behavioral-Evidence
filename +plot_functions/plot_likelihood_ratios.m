@@ -5,7 +5,7 @@ cm = brewermap(10, 'Blues');
 c = cm(5, :);
 bar(1:length(models), lls - max(lls), 'FaceColor', c)
 
-labels = labels_from_models(models);
+labels = helper_functions.labels_from_models(models);
 
 xticks(1:length(models))
 xticklabels(labels)

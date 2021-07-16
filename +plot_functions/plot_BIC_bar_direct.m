@@ -53,7 +53,7 @@ bar(1:n_mods, BIC_all_ranked, 'FaceColor', c)
 axis square
     
 xticks(1:n_mods)
-xticklabels(labels_from_models(models_ranked))
+xticklabels(helper_functions.labels_from_models(models_ranked))
 
 xtickangle(45)
 

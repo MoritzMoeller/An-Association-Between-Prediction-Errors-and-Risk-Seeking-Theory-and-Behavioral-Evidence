@@ -1,6 +1,6 @@
 function fig_s6_confusion()
 
-MODELS = get_all_models();
+MODELS = helper_functions.get_all_models();
 
 helper_functions.count_fits_model_recovery_mc(MODELS);
 

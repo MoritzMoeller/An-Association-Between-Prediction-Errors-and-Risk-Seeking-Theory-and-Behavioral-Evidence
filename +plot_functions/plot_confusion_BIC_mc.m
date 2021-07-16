@@ -1,6 +1,6 @@
 function plot_confusion_BIC_mc(models)
 
-labels = labels_from_models(models);
+labels = helper_functions.labels_from_models(models);
 
 n_mods = length(models);
 n_subs = 27;
