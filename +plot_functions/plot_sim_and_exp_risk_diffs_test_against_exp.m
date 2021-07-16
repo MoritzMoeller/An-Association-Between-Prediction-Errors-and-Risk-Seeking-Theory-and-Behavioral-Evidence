@@ -73,7 +73,7 @@ for i = 1:n
     end
 end
 
-labels = labels_from_models(models_ranked);
+labels = helper_functions.labels_from_models(models_ranked);
 labels{end+1} = "Experiment";
 
 xticks(1:(length(MODELS)+1))
