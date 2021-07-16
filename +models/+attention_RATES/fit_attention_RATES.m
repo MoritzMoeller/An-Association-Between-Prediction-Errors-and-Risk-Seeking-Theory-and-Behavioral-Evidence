@@ -58,7 +58,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+ATTENTION/param_info_ATTENTION.mat', 'theta', 'phi')
+save('+models/+attention_RATES/param_info_attention_RATES.mat', 'theta', 'phi')
 
 %% set options
 
