@@ -56,3 +56,11 @@ dt = data_prep.load_data('plosCB2021');
 ```
 
 This will give you a table `dt` with all relevant data in it.
+
+
+
+### ToDo
+
+* Number of fits correct for recoverry (100 each)
+* Set numbers for simulations
+
