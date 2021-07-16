@@ -42,7 +42,7 @@ for i = subs
 end
 
 disp('saving file')
-mkdir('data/test/recovery_posterior_mc/')
-save(['data/test/recovery_posterior_mc/fit_', model,'_',sprintf('%0.0f',now*1e8),'.mat'],'posteriors','outs', 'ground_truth_params')
+mkdir('data/recovery_posterior_mc/')
+save(['data/recovery_posterior_mc/fit_', model,'_',sprintf('%0.0f',now*1e8),'.mat'],'posteriors','outs', 'ground_truth_params')
 
 end

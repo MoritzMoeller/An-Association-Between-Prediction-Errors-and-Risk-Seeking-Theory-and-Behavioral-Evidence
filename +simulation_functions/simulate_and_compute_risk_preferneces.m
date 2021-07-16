@@ -15,8 +15,8 @@ for j = 1:n
 end
 
 disp('saving file')
-save(['data/test/risk_prefs/risk_prefs_sim_', model,'_exp_',experiment,'.mat'],'sim_risk_preferences')
-save(['data/test/risk_prefs_per_trial/risk_prefs_per_trial_sim_', model,'_exp_',experiment,'.mat'],'sim_risk_preferences_per_trial')
+save(['data/risk_prefs/risk_prefs_sim_', model,'_exp_',experiment,'.mat'],'sim_risk_preferences')
+save(['data/risk_prefs_per_trial/risk_prefs_per_trial_sim_', model,'_exp_',experiment,'.mat'],'sim_risk_preferences_per_trial')
 
 
 end
