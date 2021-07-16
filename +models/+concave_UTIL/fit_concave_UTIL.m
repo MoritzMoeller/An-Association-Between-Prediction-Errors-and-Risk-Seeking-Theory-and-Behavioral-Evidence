@@ -57,7 +57,7 @@ phi = struct();
 phi(1).name = '\beta';
 phi(1).trafo = @(x) exp(x);
 
-save('+models/+concave-UTIL/param_info_concave-UTIL.mat', 'theta', 'phi')
+save('+models/+concave_UTIL/param_info_concave_UTIL.mat', 'theta', 'phi')
 
 %% set options
 

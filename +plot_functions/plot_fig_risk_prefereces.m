@@ -3,7 +3,7 @@ function plot_fig_risk_prefereces(MODELS,LEGEND)
 LABELS = helper_functions.labels_from_models(MODELS);
 
 figure
-dt = data_prep.load_data('grohn');
+dt = data_prep.load_data('plosCB2021');
 bin_width = 25;
 
 cm = brewermap(10, 'Blues');
@@ -16,7 +16,7 @@ GREY2 = [1,1,1]*0.2;
 
 for m = 1:length(MODELS)
     
-    D = load(['data/risk_prefs_per_trial/risk_prefs_per_trial_sim_',MODELS{m},'_exp_grohn.mat']);
+    D = load(['data/risk_prefs_per_trial/risk_prefs_per_trial_sim_',MODELS{m},'_exp_plosCB2021.mat']);
     sim_risk_preferences_per_trial = D.sim_risk_preferences_per_trial;
     
     subplot(1,length(MODELS),m)

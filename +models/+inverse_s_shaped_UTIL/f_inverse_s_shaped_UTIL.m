@@ -23,6 +23,6 @@ r = u(2);
 fx = x;
 
 % udpdate previous action value: Q_t+1 = Q_t + a_Q * d
-fx(i) = x(i) + alpha * ( PU_hard_grohn(r, k) - x(i) );
+fx(i) = x(i) + alpha * ( helper_functions.power_utility(r, k) - x(i) );
 
 end

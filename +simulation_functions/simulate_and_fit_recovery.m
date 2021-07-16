@@ -3,7 +3,7 @@ function simulate_and_fit_recovery()
 n = 1; % iterations
 
 models = helper_functions.get_all_models();
-experiment = 'grohn';
+experiment = 'plosCB2021';
 
 n_mod = length(models);
 

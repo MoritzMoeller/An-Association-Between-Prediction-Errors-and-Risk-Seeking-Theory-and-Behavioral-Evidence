@@ -1,14 +1,7 @@
 function fit_model_for_confusion(dataset, model, ground_truth_params)
 
 % set initial value
-switch dataset
-    case 'grohn'
-        Q0 = 50;
-    case 'madan2'
-        Q0 = 0;
-    otherwise
-        Q0 = 50;
-end
+Q0 = 50;
 
 % load data
 dt = data_prep.load_data(dataset);

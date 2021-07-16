@@ -1,7 +1,7 @@
 function params = simulate_dataset_posterior_mc(fit_data_path)
 %
 % example input:
-% fit_data_path = '../data/grohn/fits/fit_RW.mat'
+% fit_data_path = '../data/plosCB2021/fits/fit_RW.mat'
 
 % constants
 number_of_blocks = 4;

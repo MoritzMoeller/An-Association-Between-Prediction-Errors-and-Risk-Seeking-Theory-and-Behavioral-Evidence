@@ -34,17 +34,7 @@ figure_scripts.fig_2_behaviour()
 If you want to run your own analyses, and just need the data, run
 
 ```
-dt = data_prep.load_data('grohn');
+dt = data_prep.load_data('plosCB2021');
 ```
 
 This will give you a table `dt` with all relevant data in it.
-
-
-### TODO
-
-* Rename models like in manuscript
-* Change names like 'grohn' datasets
-* Remove comments
-* Clean up get_model_names. Maybe loose it, if models are named well from outset.
-* put all data in a data folder
-

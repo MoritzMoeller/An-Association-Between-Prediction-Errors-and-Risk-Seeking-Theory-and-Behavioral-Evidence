@@ -36,10 +36,6 @@ switch experiment
         dt = data_prep.ready_dt_plosCB2021(D.data_table_image, 0);
         dt = dt(dt.ID == 1 & dt.block == 1, :);
         
-    case {'plosCB2021_alt_pub'}
-        D = load('../Reward-prediction-errors-induce-risk-seeking/data_table_alt_pub.mat');
-        dt = ready_dt_plosCB2021(D.data_table, 0);
-        
     case {'sim1'}
         D = load(['simulation game/data/dt', int2str(i1), '.mat']);
         dt = ready_sim_v2(D.dt);

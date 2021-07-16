@@ -5,6 +5,6 @@ MODELS = helper_functions.get_all_models();
 %%
 
 parfor im = 1:length(MODELS)
-        fit_model('grohn', MODELS)
+        fit_model('plosCB2021', MODELS)
 end
 end

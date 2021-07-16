@@ -1,4 +1,4 @@
-function dt = ready_dt_grohn(dt, PLOT)
+function dt = ready_dt_plosCB2021(dt, PLOT)
 %
 % NOTE: at the end are some plots to show that recoding is correct
 %
