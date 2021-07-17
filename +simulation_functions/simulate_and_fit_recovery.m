@@ -1,6 +1,6 @@
 function simulate_and_fit_recovery()
 
-n = 1; % iterations
+n = 100; % iterations
 
 models = helper_functions.get_all_models();
 experiment = 'plosCB2021';

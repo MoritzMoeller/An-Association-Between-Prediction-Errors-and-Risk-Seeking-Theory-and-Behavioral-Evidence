@@ -3,7 +3,7 @@ function simulate_risk_preferences()
 models = helper_functions.get_all_models();
 experiment = 'plosCB2021';
 
-n = 10;
+n = 1000;
 
 
 parfor m = 1:length(models)
