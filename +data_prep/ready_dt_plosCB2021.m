@@ -1,8 +1,4 @@
 function dt = ready_dt_plosCB2021(dt, PLOT)
-%
-% NOTE: at the end are some plots to show that recoding is correct
-%
-
 %% add forced flag and new_block flag
 
 dt.new_block = [1;diff(dt.block)];
